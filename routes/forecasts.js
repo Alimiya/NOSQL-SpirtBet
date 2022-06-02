@@ -2,7 +2,7 @@ const express = require('express')
 const Forecast = require('../models/forecast')
 const router = express.Router()
 const Cookies=require('cookies')
-var keys = ['Spirt']
+var keys = ['spirt']
 let cookies = new Cookies((req,res)=>{keys:keys})
 
 router.get('/new', (req, res) => {

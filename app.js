@@ -6,6 +6,7 @@ const forecastRouter = require('./routes/forecasts')
 const paypal = require('paypal-rest-sdk')
 const Cookies=require('cookies')
 const User = require("./models/User")
+const port=process.env.PORT || 3000
 var methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 var keys = ['spirt']
@@ -23,7 +24,7 @@ async function start(){
         await mongoose.connect('mongodb+srv://123:123@bet.t7ijm.mongodb.net/user',{
             useNewUrlParser: true
         })
-        server.listen(3000, () => {
+        server.listen(port, () => {
             console.log(`Example app listening on port`)
         })
 
