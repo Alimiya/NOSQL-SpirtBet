@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Bundesliga standings</title>
+    <link rel="stylesheet" href="/css/welcome.css" type="text/css">
+    <link rel="java" href="/css/master.css">
+</head>
+<body>
+<div class="logo-svg2">
+    <svg width="150" height="75" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g class="layer">
+            <rect fill="#cc3737" height="75" id="svg_1" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="150" x="0" y="0"/>
+            <text fill="#ffffff" font-family="serif" font-size="12" id="svg_4" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.83375 0 0 2.51585 -24.1497 -215.334)" x="30" xml:space="preserve" y="110">Spirtbet</text>
+        </g>
+    </svg>
+</div>
+<div class="menu">
+    <nav class="navMenu">
+        <a href="/main">Home</a>
+        <a href="/stands">Stands</a>
+        <a href="/profile">Profile</a>
+        <a href="/bets">Bets</a>
+        <a href="/about">About</a>
+        <a href="/chat">Chat</a>
+        <a href="/forecasts/indexuser">Forecast</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</div>
+<div class="subtitle1"><p>Serie A Stands</p></div>
+<br>
+<div class="stands">
+    <div id="wg-api-football-standings"
+         data-host="v3.football.api-sports.io"
+         data-league="135"
+         data-team=""
+         data-season="2021"
+         data-key="8b08b635175e8a5b5a3b6f1a2856e64f"
+         data-theme=""
+         data-show-errors="false"
+         class="api_football_loader"></div>
+    <script type="module" src="https://widgets.api-sports.io/football/1.1.8/widget.js"></script>
+</div>
+<br>
+<div class="signin">
+    <button class="btn" id="btn" onclick="location.href='/stands'">Return</button>
+</div>
+</body>
+</html>

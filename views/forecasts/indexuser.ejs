@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/welcome.css" type="text/css">
+    <link rel="java" href="/css/master.css">
+    <title>Blog</title>
+</head>
+<body>
+<div class="logo-svg2">
+    <svg width="150" height="75" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g class="layer">
+            <rect fill="#cc3737" height="75" id="svg_1" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="150" x="0" y="0"/>
+            <text fill="#ffffff" font-family="serif" font-size="12" id="svg_4" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.83375 0 0 2.51585 -24.1497 -215.334)" x="30" xml:space="preserve" y="110">Spirtbet</text>
+        </g>
+    </svg>
+</div>
+<div class="menu">
+    <nav class="navMenu">
+        <a href="/main">Home</a>
+        <a href="/stands">Stands</a>
+        <a href="/profile">Profile</a>
+        <a href="/bets">Bets</a>
+        <a href="/about">About</a>
+        <a href="/chat">Chat</a>
+        <a href="/forecasts/indexuser">Forecast</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</div>
+<br><br>
+<br><br>
+<div class="profile-box" style="text-align: center">
+    <div class="greetings">
+        <p> Forecasts</p>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <% forecasts.forEach(forecast => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h1 class="card-title"><%= forecast.title %></h1>
+                    <div class="card-subtitle text-muted mb-1">
+                        <h2><%= forecast.createdAt.toLocaleDateString() %></h2>
+                    </div>
+                    <div class="card-text mb-1"><h2><%= forecast.markdown %></h2></div>
+                    <hr>
+                    <br>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+</body>
+</html>

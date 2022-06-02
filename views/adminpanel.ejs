@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/css/welcome.css" type="text/css">
+    <link rel="java" href="/css/master.css">
+</head>
+<body>
+<div class="greetings">
+    <p>Welcome to Admin Panel, <%=username%></p>
+</div>
+<div class="logo-svg3">
+    <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g class="layer">
+            <rect fill="#cc3737" height="150" id="svg_1" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="300" x="0" y="0"/>
+            <text fill="#ffffff" font-family="serif" font-size="24" id="svg_4" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.83375 0 0 2.51585 -24.1497 -215.334)" x="51.16667" xml:space="preserve" y="136.83333">Spirtbet</text>
+        </g>
+    </svg>
+</div>
+<div class="menu">
+    <nav class="navMenu">
+        <a href="/forecasts/index">Forecasts</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</div>
+<br>
+<br>
+<br>
+<div class="users">
+    <table class="table">
+        <tr>
+            <th class="table__heading">Primary key</th>
+            <th class="table__heading">Username</th>
+            <th class="table__heading">Name</th>
+            <th class="table__heading">Surname</th>
+            <th class="table__heading">Email</th>
+            <th class="table__heading">Role</th>
+            <th class="table__heading">Balance</th>
+        </tr>
+        <%usersinfo.forEach(function(user) { %>
+        <tbody>
+        <tr>
+            <td><%=user._id %></td>
+            <td><%=user.login %></td>
+            <td><%=user.name %></td>
+            <td><%=user.surname %></td>
+            <td><%=user.email %></td>
+            <td><%=user.role %></td>
+            <td><%=user.balance %></td>
+        </tr>
+        </tbody>
+        <% }) %>
+    </table>
+</div>
+<br><br><br>
+<div class="sortname">
+    <form method="post" action="/sort_by_names">
+        <button type="submit">Sort by names</button>
+    </form></div>
+<br>
+<div class="sortname">
+    <form method="post" action="/sort_by_surnames">
+        <button type="submit">Sort by surnames</button>
+    </form></div>
+<br>
+<div class="sortname">
+        <button type="button" id="myBtn">Delete user</button>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Delete user</h1>
+        <p>Enter the users login to delete the user</p>
+        <hr>
+        <div class="deleteform">
+            <form action="/deleteuser" method="post">
+                <div class="input-container ic2">
+                    <input name="username" id="login" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="username" class="placeholder">Login</label>
+                </div>
+                <button type="text" class="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sortname">
+    <button type="button" id="update">Update user</button>
+</div>
+<div id="updatemodal" class="modal">
+    <div class="modal-content">
+        <span class="close1">&times;</span>
+        <h1>Update user</h1>
+        <p>Enter the users login and new information to update the user</p>
+        <hr>
+        <div class="deleteform">
+            <form action="/updateuser" method="post">
+                <div class="input-container ic2">
+                    <input name="username" id="login" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="username" class="placeholder">Login</label>
+                </div>
+                <div class="input-container ic2">
+                    <input name="firstname" id="firstname" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="firstname" class="placeholder">Name</label>
+                </div>
+                <div class="input-container ic1">
+                    <input name="lastname" id="lastname" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="lastname" class="placeholder">Surname</label>
+                </div>
+                <div class="input-container ic2">
+                    <input name="email" id="email" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="email" class="placeholder">Email</label>
+                </div>
+                <button type="text" class="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sortname">
+    <button type="button" id="insert">Add a new user</button>
+</div>
+<div id="insertmodal" class="modal">
+    <div class="modal-content">
+        <span class="close2">&times;</span>
+        <h1>Insert user</h1>
+        <p>Enter the user information to add a profile</p>
+        <hr>
+        <div class="deleteform">
+            <form action="/insertuser" method="post">
+                <div class="input-container ic2">
+                    <input name="username" id="login" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="username" class="placeholder">Login</label>
+                </div>
+                <div class="input-container ic1">
+                    <input name="passw" id="password" class="input" type="password" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="passw" class="placeholder">Password</label>
+                </div>
+                <div class="input-container ic1">
+                    <input name="firstname" id="firstname" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="firstname" class="placeholder">First name</label>
+                </div>
+                <div class="input-container ic2">
+                    <input name="lastname" id="lastname" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="lastname" class="placeholder">Last name</label>
+                </div>
+                <div class="input-container ic2">
+                    <input name="mail" id="email" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="mail" class="placeholder">Email</label>
+                </div>
+                <button type="text" class="submit">Insert</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sortname">
+    <button type="button" id="bets" onclick="location.href='/checkbets'">Check bets</button>
+</div>
+<div class="sortname1">
+    <form action="/clear" method="post">
+        <input type="submit" value="Clear">
+    </form>
+</div>
+<script>var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        var update = document.getElementById("updatemodal");
+        var updatebtn = document.getElementById("update");
+        var span = document.getElementsByClassName("close1")[0];
+        updatebtn.onclick = function() {
+            update.style.display = "block";
+        }
+        span.onclick = function() {
+            update.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == update) {
+                update.style.display = "none";
+            }
+        }
+    var insert = document.getElementById("insertmodal");
+    var insertbtn = document.getElementById("insert");
+    var span = document.getElementsByClassName("close2")[0];
+    insertbtn.onclick = function() {
+        insert.style.display = "block";
+    }
+    span.onclick = function() {
+        insert.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == insert) {
+            insert.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

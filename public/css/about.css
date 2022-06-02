@@ -1,0 +1,185 @@
+header {
+    -o-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    padding:  0px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    border-bottom: 3px solid #dad;
+  }
+  /* GRADIEND */
+  .navMenu {
+    position: absolute;
+    left: 26%;
+    padding: 10px;
+  }
+  .logo-svg{
+    text-align: center;
+    margin-top: 15%;
+    size:10%;
+  }
+  .logo-svg1{
+    text-align: center;
+    margin-top: 2%;
+    size:10%;
+  }
+  .logo-svg2{
+  text-align: center;
+  }
+  .logo-svg3{
+      text-align: center;
+      margin-top: 10%;
+      size:10%;
+  }
+  .menu{
+    margin-top: 2px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    display: inline-block;
+    width: 100px;
+    padding-left: 40px;
+  
+    background-color: #cc3737 ;
+  }
+  
+  .navMenu a:hover {
+    color: #fddb3a;
+  }
+  
+  .ap {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #333;
+  background: #222;
+  border-top: 2px solid #f0f;
+  z-index: 9999;
+  }  
+  /*END*/
+  
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    background-color: #cc3737;
+    overflow: hidden;
+  }
+  
+  .wrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    font: 300 30px/1 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    animation: 60s credits linear infinite;
+  }
+  
+  .movie {
+    margin-bottom: 50px;
+    font-size: 50px;
+  }
+  
+  .job {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  .name {
+    margin-bottom: 50px;
+    font-size: 35px;
+  }
+  
+  @keyframes credits {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -300%;
+    }
+  }
+  .users{
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 0.01px solid white;
+    box-sizing: border-box;
+    text-align: center;
+}
+td, th { padding: 8px; padding: .5rem;
+}
+
+th {
+    text-align: left;
+    font-weight: 300;
+    font-size: 20px;
+    font-size: 1.25rem;
+}
+
+td { font-family: 'Avenir Next', 'Segoe UI', 'Lucida Grande', sans-serif; }
+
+.table {
+    width: 100%;
+    padding: 16px;
+    padding: 1rem;
+}
+
+.table__heading { border-bottom: 2px solid white; }
+@media (max-width: 32rem) {
+    .table__heading {
+        display: none;
+    }
+    .table__content {
+        display: block;
+        padding: .5rem 0;
+    }
+    .table__row {
+        margin: .25rem 1rem;
+        padding: .5rem 0;
+        display: block;
+        border-bottom: 2px solid white;
+    }
+    .table__content:before {
+        content: attr(data-heading);
+        display: inline-block;
+        width: 5rem;
+        margin-right: .5rem;
+        color: #999;
+        font-size: .75rem;
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}

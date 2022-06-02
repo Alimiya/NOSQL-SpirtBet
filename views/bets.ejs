@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/css/welcome.css" type="text/css">
+    <link rel="java" href="/css/master.css">
+</head>
+<body>
+<div class="logo-svg2">
+    <svg width="150" height="75" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g class="layer">
+            <rect fill="#cc3737" height="75" id="svg_1" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="150" x="0" y="0"/>
+            <text fill="#ffffff" font-family="serif" font-size="12" id="svg_4" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.83375 0 0 2.51585 -24.1497 -215.334)" x="30" xml:space="preserve" y="110">Spirtbet</text>
+        </g>
+    </svg>
+</div>
+<div class="menu">
+    <nav class="navMenu">
+        <a href="/main">Home</a>
+        <a href="/stands">Stands</a>
+        <a href="/profile">Profile</a>
+        <a href="/bets">Bets</a>
+        <a href="/about">About</a>
+        <a href="/chat">Chat</a>
+        <a href="/forecasts/indexuser">Forecast</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</div>
+<br><br><br>
+<div class="greetings"><h4>Upcoming matches</h4></div>
+    <div class="flex-container" id="game">
+        <div class="flex-child">
+            <img src="/pictures/Liverpool_FC.png" id="left_team">
+            <h2 style="margin-left: 20px; color: white">Liverpool</h2>
+            <br>
+            <br>
+            <h2 style="margin-left: 20px; color: white">Last games: W D W W W</h2>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="flex-child">
+            <h3 style="color:white;">Match ID: 1</h3>
+            <h3 style="color: white">29.05.2022 01:00</h3>
+            <h1 style="color:white;"> - </h1>
+            <br>
+            <h3 style="color:white;">Neutral location - Stade de France</h3>
+        </div>
+        <div class="flex-child">
+            <img src="/pictures/real-logo.png" id="left_team" >
+            <h2 style="color: white">Real Madrid</h2>
+            <br>
+            <br>
+            <h2 style="color: white">Last games: L W W L W</h2>
+            <br>
+            <br>
+            <br>
+        </div>
+</div>
+<br>
+<div class="ods for match">
+    <div class="flex-container">
+        <div class="flex-child">
+           <div class="sortname">
+               <button type="button" id="bet1"><p>Win of first team</p><p><%=coef1%></p></button>
+           </div>
+        </div>
+        <div class="flex-child">
+            <div class="sortname">
+                <button type="button" id="betd"><p>Draw</p><p><%=coef2%></p></button>
+            </div>
+        </div>
+        <div class="flex-child">
+            <div class="sortname">
+                <button type="button" id="bet2"><p>Win of second team</p><p><%=coef3%></p></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="betmodal" class="modal">
+    <div class="modal-content">
+        <span class="close6">&times;</span>
+        <h1>Bet</h1>
+        <hr>
+        <div class="deleteform">
+            <form action="/bet1" method="post">
+                <div class="input-container ic1">
+                    <input name="amount" id="firstname" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="amount" class="placeholder">Amount</label>
+                </div>
+                <button type="text" class="submit">Bet</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="betmodald" class="modal">
+    <div class="modal-content">
+        <span class="close7">&times;</span>
+        <h1>Bet</h1>
+        <hr>
+        <div class="deleteform">
+            <form action="/betd" method="post">
+                <div class="input-container ic1">
+                    <input name="amount" id="firstname" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="amount" class="placeholder">Amount</label>
+                </div>
+                <button type="text" class="submit">Bet</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="betmodal2" class="modal">
+    <div class="modal-content">
+        <span class="close8">&times;</span>
+        <h1>Bet</h1>
+        <hr>
+        <div class="deleteform">
+            <form action="/bet2" method="post">
+                <div class="input-container ic1">
+                    <input name="amount" id="firstname" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="amount" class="placeholder">Amount</label>
+                </div>
+                <button type="text" class="submit">Bet</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>var bet1 = document.getElementById("betmodal");
+    var bet1btn = document.getElementById("bet1");
+    var span = document.getElementsByClassName("close6")[0];
+    bet1btn.onclick = function() {
+        bet1.style.display = "block";
+    }
+    span.onclick = function() {
+        bet1.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == bet1) {
+            bet1.style.display = "none";
+        }
+    }
+    var bet2 = document.getElementById("betmodald");
+    var bet2btn = document.getElementById("betd");
+    var span = document.getElementsByClassName("close7")[0];
+    bet2btn.onclick = function() {
+        bet2.style.display = "block";
+    }
+    span.onclick = function() {
+        bet2.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == bet2) {
+            bet2.style.display = "none";
+        }
+    }
+    var bet3 = document.getElementById("betmodal2");
+    var bet3btn = document.getElementById("bet2");
+    var span = document.getElementsByClassName("close8")[0];
+    bet3btn.onclick = function() {
+        bet3.style.display = "block";
+    }
+    span.onclick = function() {
+        bet3.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == bet3) {
+            bet3.style.display = "none";
+        }
+    }</script>
+</body>
+</html>

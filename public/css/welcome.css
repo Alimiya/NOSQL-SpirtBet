@@ -1,0 +1,710 @@
+body{
+  background-color: #cc3737;
+}
+.txtb{
+  text-decoration: none;
+  color: #eee;
+}
+.logo-svg{
+  text-align: center;
+  margin-top: 15%;
+  size:10%;
+}
+.logo-svg1{
+  text-align: center;
+  margin-top: 2%;
+  size:10%;
+}
+.logo-svg2{
+text-align: center;
+}
+.logo-svg3{
+    text-align: center;
+    margin-top: 10%;
+    size:10%;
+}
+.wrapper{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.signin{
+    align:left;
+  display: inline-block;
+}
+.login{
+    align:right;
+  display: inline-block;
+  margin-left: 10%;
+}
+.signin button {
+ position: relative;
+ display: block;
+ margin: 0 auto;
+ padding: 1em 2em 0.85em 2em;
+ font-size: 16px;
+ letter-spacing: 0.2em;
+ text-align: center;
+ text-transform: uppercase;
+ background-color: transparent;
+ border: 1px solid black;
+ border-bottom: 5px solid black;
+ transition: color 700ms ease;
+ transition-property: color, background-color, transform;
+ cursor: pointer;
+ z-index: 1;
+ color: white;
+}
+
+.signin button:hover {
+ color: black;
+}
+
+.signin button:hover:before {
+ width: 100%;
+ height: 100%;
+ top: auto;
+ bottom: 0;
+}
+
+.signin button:active {
+ transform: translateY(4px)
+}
+
+.signin button:before {
+ content: '';
+ position: absolute;
+ display: block;
+ margin: 0 auto;
+ height: 0%;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ z-index: -1;
+ background-color: white;
+ transition: height 0.3s ease;
+}
+
+.login button {
+ position: relative;
+ display: block;
+ margin: 0 auto;
+ padding: 1em 2em 0.85em 2em;
+ font-size: 16px;
+ letter-spacing: 0.2em;
+ text-align: center;
+ text-transform: uppercase;
+ background-color: transparent;
+ border: 1px solid black;
+ border-bottom: 5px solid black;
+ transition: color 700ms ease;
+ transition-property: color, background-color, transform;
+ cursor: pointer;
+ z-index: 1;
+ color: white;
+}
+
+.login button:hover {
+ color: black;
+}
+
+.login button:hover:before {
+ width: 100%;
+ height: 100%;
+ top: auto;
+ bottom: 0;
+}
+
+.login button:active {
+ transform: translateY(4px)
+}
+
+.login button:before {
+ content: '';
+ position: absolute;
+ display: block;
+ margin: 0 auto;
+ height: 0%;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ z-index: -1;
+ background-color: white;
+ transition: height 0.3s ease;
+}
+.signin-form{
+    width: 320px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 0.01px solid white;
+    box-sizing: border-box;
+    height: 650px;
+    padding: 20px;
+    position: fixed; top: 55%; left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: transparent;
+  border-radius: 12px;
+  border: 0.01px solid white;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #eee;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: white;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+.submit {
+  background-color: transparent;
+  border-radius: 12px;
+  border: 0.1px solid white;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  // outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: white;
+  color:black;
+}
+.p{
+  color: white;
+}
+.p a:link {
+  color: white;
+  text-decoration: none;
+}
+.p a:visited {
+  color: white;
+  text-decoration: none;
+}
+.p a:hover {
+  color: #edb468;
+  text-decoration: none;
+}
+.p a:active {
+  color: white;
+  text-decoration: none;
+}
+.navMenu {
+  position: absolute;
+  left: 26%;
+  padding: 10px;
+}
+.menu{
+  margin-top: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline-block;
+  width: 100px;
+  padding-left: 40px;
+}
+
+.navMenu a:hover {
+  color: #fddb3a;
+}
+
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.stands{
+  margin-left: 10%;
+  width: 80%;
+  text-align: center;
+   justify-content: center;
+   display: flex;
+  align-items: center;
+}
+.container{
+  width: 90%;
+  height: 15%;
+  margin: 0 auto;
+}
+.logo1{
+  display: inline-block;
+}
+.logo2{
+  display: inline-block;
+  margin-left: 13%;
+}
+.laliga{
+  width: 200px;
+  height: 250px;
+}
+.bundes{
+  width: 300px;
+  height: 250px;
+}
+.epl-logo{
+  width: 250px;
+  height: 250px;
+}
+.serie_a{
+  height: 250px;
+  width: 160px;
+}
+.signin{
+  margin: 0 auto;
+  display: block;
+  width: 20%;
+}
+.subtitle1{
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-top: 5%;
+}
+.greetings{
+    text-align: center;
+    font-size: 36px;
+    color:white;
+}
+.fixtures{
+    width:60%;
+    margin: 0 auto;
+}
+.users{
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 0.01px solid white;
+    box-sizing: border-box;
+    text-align: center;
+}
+td, th { padding: 8px; padding: .5rem;
+}
+
+th {
+    text-align: left;
+    font-weight: 300;
+    font-size: 20px;
+    font-size: 1.25rem;
+}
+
+td { font-family: 'Avenir Next', 'Segoe UI', 'Lucida Grande', sans-serif; }
+
+.table {
+    width: 100%;
+    padding: 16px;
+    padding: 1rem;
+}
+
+.table__heading { border-bottom: 2px solid white; }
+@media (max-width: 32rem) {
+    .table__heading {
+        display: none;
+    }
+    .table__content {
+        display: block;
+        padding: .5rem 0;
+    }
+    .table__row {
+        margin: .25rem 1rem;
+        padding: .5rem 0;
+        display: block;
+        border-bottom: 2px solid white;
+    }
+    .table__content:before {
+        content: attr(data-heading);
+        display: inline-block;
+        width: 5rem;
+        margin-right: .5rem;
+        color: #999;
+        font-size: .75rem;
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+.sortname button {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 1em 2em 0.85em 2em;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid black;
+    border-bottom: 5px solid black;
+    transition: color 700ms ease;
+    transition-property: color, background-color, transform;
+    cursor: pointer;
+    z-index: 1;
+    color: white;
+}
+
+.sortname button:hover {
+    color: black;
+}
+
+.sortname button:hover:before {
+    width: 100%;
+    height: 100%;
+    top: auto;
+    bottom: 0;
+}
+
+.sortname button:active {
+    transform: translateY(4px)
+}
+
+.sortname button:before {
+    content: '';
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    height: 0%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: white;
+    transition: height 0.3s ease;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+    color:white;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #cc3737;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid white;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close1 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close2 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close3 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close4 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close4:hover,
+.close4:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close5 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close5:hover,
+.close5:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close6 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close6:hover,
+.close6:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close7 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close7:hover,
+.close7:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close8{
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close8:hover,
+.close8:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.deleteform{
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.profile-box{
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 0.01px solid white;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+}
+#left_team{
+    width: 150px;
+    height: 160px;
+    padding: 10px;
+}
+#game{
+    border-radius: 20px;
+    border: 0.01px solid white;
+}
+.flex-container {
+    display: flex;
+    text-align: center;
+}
+
+.flex-child {
+    flex: 1;
+}
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+.flex-child:last-child {
+    margin-left: 20px;
+}
+.bet_button{
+    border-radius: 20px;
+    border: 0.01px solid white;
+}
+.sortname1 input{position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 1em 2em 0.85em 2em;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid black;
+    border-bottom: 5px solid black;
+    transition: color 700ms ease;
+    transition-property: color, background-color, transform;
+    cursor: pointer;
+    z-index: 1;
+    color: white;
+}
+.sortname1 input:hover {
+    color: black;
+}
+
+.sortname1 input:hover:before {
+    width: 100%;
+    height: 100%;
+    top: auto;
+    bottom: 0;
+}
+
+.sortname1 input:active {
+    transform: translateY(4px)
+}
+
+.sortname1 input:before {
+    content: '';
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    height: 0%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: white;
+    transition: height 0.3s ease;
+}
+.abc{
+    text-decoration: none;
+    color: white;
+}

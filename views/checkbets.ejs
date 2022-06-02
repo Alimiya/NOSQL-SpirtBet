@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/css/welcome.css" type="text/css">
+    <link rel="java" href="/css/master.css">
+</head>
+<body>
+<div class="logo-svg3">
+    <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g class="layer">
+            <rect fill="#cc3737" height="150" id="svg_1" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="300" x="0" y="0"/>
+            <text fill="#ffffff" font-family="serif" font-size="24" id="svg_4" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.83375 0 0 2.51585 -24.1497 -215.334)" x="51.16667" xml:space="preserve" y="136.83333">Spirtbet</text>
+        </g>
+    </svg>
+</div>
+<div class="menu">
+    <nav class="navMenu">
+        <a href="/logout">Logout</a>
+    </nav>
+</div>
+<br>
+<br>
+<br>
+<div class="users">
+    <table class="table">
+        <tr>
+            <th class="table__heading">Bet ID</th>
+            <th class="table__heading">Match ID</th>
+            <th class="table__heading">Username</th>
+            <th class="table__heading">Bet</th>
+            <th class="table__heading">Amount</th>
+            <th class="table__heading">Coef</th>
+            <th class="table__heading">Status</th>
+        </tr>
+        <%betsinfo.forEach(function(bets) { %>
+        <tbody>
+        <tr>
+            <td><%=bets._id %></td>
+            <td><%=bets.matchid %></td>
+            <td><%=bets.login %></td>
+            <td><%=bets.bet %></td>
+            <td><%=bets.amount %></td>
+            <td><%=bets.coef %></td>
+            <td><%=bets.status %></td>
+        </tr>
+        </tbody>
+        <% }) %>
+    </table>
+</div>
+<br><br><br>
+<div class="sortname">
+    <form method="post" action="/sort_by_names">
+        <button type="submit">Sort by names</button>
+    </form></div>
+<br>
+<div class="sortname">
+    <form method="post" action="/sort_by_surnames">
+        <button type="submit">Sort by surnames</button>
+    </form></div>
+<br>
+<div class="sortname">
+    <button type="button" id="decide">Decide</button>
+</div>
+<div id="decidemodal" class="modal">
+    <div class="modal-content">
+        <span class="close2">&times;</span>
+        <h1>Decide</h1>
+        <hr>
+        <div class="deleteform">
+            <form action="/decide" method="post">
+
+                <button type="text" class="submit">Decide</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sortname">
+    <button type="button" onclick="location.href='/adminpanel'">Go back</button>
+</div>
+<script>var decide = document.getElementById("decidemodal");
+    var decidebtn = document.getElementById("decide");
+    var span = document.getElementsByClassName("close")[0];
+    decidebtn.onclick = function() {
+        decide.style.display = "block";
+    }
+    span.onclick = function() {
+        decide.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == decide) {
+            decide.style.display = "none";
+        }
+    }</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/css/welcome.css" type="text/css">
+    <link rel="java" href="/css/master.css">
+    <title>Socket.IO chat</title>
+    <style>
+        body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+        #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+        #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+        #input:focus { outline: none; }
+        #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages > li { padding: 0.5rem 1rem; }
+        #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
+</head>
+<body>
+<div class="logo-svg2">
+    <svg width="150" height="75" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g class="layer">
+            <rect fill="#cc3737" height="75" id="svg_1" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="150" x="0" y="0"/>
+            <text fill="#ffffff" font-family="serif" font-size="12" id="svg_4" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(2.83375 0 0 2.51585 -24.1497 -215.334)" x="30" xml:space="preserve" y="110">Spirtbet</text>
+        </g>
+    </svg>
+</div>
+<div class="menu">
+    <nav class="navMenu">
+        <a href="/main">Home</a>
+        <a href="/stands">Stands</a>
+        <a href="/profile">Profile</a>
+        <a href="/bets">Bets</a>
+        <a href="/about">About</a>
+        <a href="/chat">Chat</a>
+        <a href="/forecasts/indexuser">Forecast</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</div>
+<br><br><br>
+<div style="width: 80%; height: 80%;"><ul id="messages"></ul></div>
+
+<form id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+
+    var messages = document.getElementById('messages');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+            socket.emit('chat message', input.value);
+            input.value = '';
+        }
+    });
+
+    socket.on('chat message', function(msg) {
+        var item = document.createElement('li');
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+</script>
+</body>
+</html>
